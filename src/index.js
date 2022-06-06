@@ -38,6 +38,6 @@
         if (typeof value === 'object') {
             newArr.push(...getAllObjectKeys(value));
         };
-        return newArr;
-    }, []).filter((prop, index, resArr) => resArr.indexOf(prop) === index);
+        return [...new Set(newArr)];
+    }, []);
 }
